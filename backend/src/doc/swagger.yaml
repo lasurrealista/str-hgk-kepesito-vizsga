@@ -62,7 +62,7 @@ paths:
         - Student
       parameters:
         - in: path
-          name: _id
+          name: id
           required: true
           schema:
             type: string
@@ -231,7 +231,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-    patch:
+    put:
       description: Updates a School
       tags:
         - School
@@ -330,7 +330,11 @@ components:
         zipcode:
           type: number
         classrooms:
-          type: [string]
+          type: array
+          items:
+            $ref: '#/components/schemas/Classroom'
+    Classroom:
+      type: string
     Error:
       type: object
       required:
