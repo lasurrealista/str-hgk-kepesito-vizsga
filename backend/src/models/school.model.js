@@ -27,7 +27,8 @@
     },
     classrooms: {
         type: [String],
-        required: true
+        ref: 'Classroom',
+        required: false,
     },
  }, {
      timeStamps: true
