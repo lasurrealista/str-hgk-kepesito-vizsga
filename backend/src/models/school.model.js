@@ -25,11 +25,12 @@
         type: Number,
         required: true
     },
-    classrooms: {
-        type: [String],
-        ref: 'Classroom',
-        required: false,
-    },
+    classrooms: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Classroom'
+        }
+    ]
  }, {
      timeStamps: true
  });
